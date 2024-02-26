@@ -25,6 +25,6 @@ mongoose.connect(process.env.MONGODB_URL).then(()=>{
 app.use('/', admin)
 
 
-app.listen(process.env.PORTA_SERVER,()=>{
+app.listen(process.env.PORT_SERVER,()=>{
     console.log(`SERVER RUNNING ON PORT ${process.env.PORT_SERVER}`)
 })
