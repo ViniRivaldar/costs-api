@@ -26,5 +26,5 @@ app.use('/', admin)
 
 
 app.listen(process.env.PORTA_SERVER,()=>{
-    console.log(`SERVER RUNNING ON PORT ${process.env.PORTA_SERVER}`)
+    console.log(`SERVER RUNNING ON PORT ${process.env.PORT_SERVER}`)
 })
