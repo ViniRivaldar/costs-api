@@ -11,6 +11,21 @@ const listar = async (req, res) => {
     }
 };
 
+const listarId= async (req, res) => {
+    const { id } = req.params;
+    try {
+        const projeto = await Projeto.findById(id);
+        if (!projeto) {
+            return res.status(404).json({ mensagem: 'Projeto não encontrado' });
+        }
+        res.json({ projeto });
+    } catch (error) {
+        console.log(`erro de: ${error}`);
+        res.status(500).send("erro no servidor");
+    }
+};
+
+
 const postar = async (req, res) => {
     const projeto = new Projeto({
         name: req.body.name,
@@ -51,4 +66,4 @@ const deletar = async (req, res) => {
     }
 };
 
-module.exports = { listar, postar, editar, deletar };
+module.exports = { listar, listarId, postar, editar, deletar };
