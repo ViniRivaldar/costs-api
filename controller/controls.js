@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-const Projeto = require('../modules/Projeto');
+const {Projeto, Categories} = require('../modules/Projeto');
 
 const listar = async (req, res) => {
     try {
@@ -24,6 +24,16 @@ const listarId= async (req, res) => {
         res.status(500).send("erro no servidor");
     }
 };
+
+const listarCategorias = async (req, res) => {
+    try {
+        const categorias = await Categories.find({});
+        res.json(categorias);
+    } catch (err) {
+        console.error(err);
+        res.status(500).send("Erro ao buscar categorias");
+    }
+}
 
 
 const postar = async (req, res) => {
@@ -66,4 +76,4 @@ const deletar = async (req, res) => {
     }
 };
 
-module.exports = { listar, listarId, postar, editar, deletar };
+module.exports = { listar, listarId, listarCategorias, postar, editar, deletar };
