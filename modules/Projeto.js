@@ -11,10 +11,8 @@ const projetoSchema = new Schema({
         required: true
     },
     category:{
-        name:{
-            type: String, 
-            required: true
-        }
+        type: String, 
+        required: true
     },
     cost:{
         type: Number,
