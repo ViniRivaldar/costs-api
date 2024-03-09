@@ -11,11 +11,38 @@ const projetoSchema = new Schema({
         required: true
     },
     category:{
-        type: String,
-        required: true
+        name:{
+            type: String, 
+            required: true
+        }
+    },
+    cost:{
+        type: Number,
+        default: 0
+    },
+    services:{
+        name:{
+            type: String,
+            required:true
+        },
+        description:{
+            type: String,
+            required: true
+        }
     }
 });
 
 const Projeto = mongoose.model("Projeto", projetoSchema);
 
 module.exports = Projeto
+
+const categoriesSchema = new Schema({
+    name: {
+        type: String,
+        required: true
+    }
+});
+
+const Categories = mongoose.model("Categories", categoriesSchema);
+
+module.exports = { Projeto, Categories };
