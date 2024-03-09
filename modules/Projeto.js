@@ -21,11 +21,9 @@ const projetoSchema = new Schema({
     services:{
         name:{
             type: String,
-            required:true
         },
         description:{
             type: String,
-            required: true
         }
     }
 });
