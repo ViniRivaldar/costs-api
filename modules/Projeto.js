@@ -22,6 +22,9 @@ const projetoSchema = new Schema({
         name:{
             type: String,
         },
+        cost:{
+            type: Number
+        },
         description:{
             type: String,
         }
